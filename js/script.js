@@ -128,16 +128,81 @@
 
 // 53 Что такое контект?
 
-let person = {
-    name: 'Nar',
-    age: 19,
-    job: 'Frontend',
-    displayInfo: function(ms) {
-        setTimeout(function() {
-            console.log('Name: ', this.name);
-            console.log('Job: ', this.job);
-            console.log('Age: ', this.age);
-        }.bind(this), ms)        
-    }
+// let person = {
+//     name: 'Nar',
+//     age: 19,
+//     job: 'Frontend',
+//     displayInfo: function(ms) {
+//         setTimeout(function() {
+//             console.log('Name: ', this.name);
+//             console.log('Job: ', this.job);
+//             console.log('Age: ', this.age);
+//         }.bind(this), ms)        
+//     }
+// }
+// person.displayInfo(5000)
+
+//54 Привязка контекста
+
+// function printObject(objName) {
+//     console.log('Printing Object: ', objName);
+//     for (let key in this) {
+//         if(this.hasOwnProperty(key)) {
+//             console.log('[' + key + ']', this[key]);
+//         }
+//     }
+// }
+
+
+// let person = {
+//     firstName: 'Nar',
+//     job: 'Frontend',
+//     age: 19,
+//     friends: ['Lisa', 'Maria']
+// }
+
+// let car = {
+//     name: 'BMW',
+//     model: 'X3',
+//     year: 2020
+// }
+
+// let printPerson = printObject.bind(person)
+// printPerson('Person')
+
+// printObject.call(car, 'Car')
+
+// printObject.apply(person, ['Person'])
+
+//55 
+/*
+Реализуйте возможность используя прототип, чтобы у каждого массива был новый метод, позволяющий удваивать значение каждого элемента с учетом типа данных таким образом, чтобы:
+1. Для чисел это возведение в квадрат
+2. Для строк это удваивание строки
+3. Метод не изменил существующий массив и возвращал
+
+Пример:
+[1, 2, 3] => [1, 4, 9]
+[5, 'Hello', 6] => [25, 'HelloHello', 36]
+
+*/
+let a = [1, 2, 3]
+let b = [5, 'Hello', 6]
+
+Array.prototype.double = function() {
+    let newArray = this.map(function(i) {
+        if(typeof i === 'number') {
+            return Math.pow(i, 2)
+        }
+        if(typeof i === 'string') {
+            return i += i
+        }
+    })
+
+    return newArray
 }
-person.displayInfo(5000)
+let newA = a.double()
+let newB = b.double()
+
+console.log('Aa: ', newA.double());
+console.log('Bb: ', newB);
