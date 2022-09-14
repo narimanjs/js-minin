@@ -186,23 +186,23 @@
 [5, 'Hello', 6] => [25, 'HelloHello', 36]
 
 */
-let a = [1, 2, 3]
-let b = [5, 'Hello', 6]
+// let a = [1, 2, 3]
+// let b = [5, 'Hello', 6]
 
-Array.prototype.double = function() {
-    let newArray = this.map(function(i) {
-        if(typeof i === 'number') {
-            return Math.pow(i, 2)
-        }
-        if(typeof i === 'string') {
-            return i += i
-        }
-    })
+// Array.prototype.double = function() {
+//     let newArray = this.map(function(i) {
+//         if(typeof i === 'number') {
+//             return Math.pow(i, 2)
+//         }
+//         if(typeof i === 'string') {
+//             return i += i
+//         }
+//     })
 
-    return newArray
-}
-let newA = a.double()
-let newB = b.double()
+//     return newArray
+// }
+// let newA = a.double()
+// let newB = b.double()
 
-console.log('Aa: ', newA.double());
-console.log('Bb: ', newB);
+// console.log('Aa: ', newA.double());
+// console.log('Bb: ', newB);
