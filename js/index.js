@@ -116,14 +116,53 @@ form.addEventListener('submit', event => {
 // }
 
 // rest
-function saveForm(...args) {
+// function saveForm(...args) {
     
-    const [title, text, desc] = args
+//     const [title, text, desc] = args
 
-    const formData = {
-        date: new Date().toLocaleString(),
-        title, text, desc
-    }
+//     const formData = {
+//         date: new Date().toLocaleString(),
+//         title, text, desc
+//     }
 
-    console.log('Form data: ', formData);
-}
+//     console.log('Form data: ', formData);
+// }
+
+// 62 Строки
+
+// const creatLink = ({path, name}) => `<a target="_blank" href="${path}">${name}</a>`
+
+// const ul = document.querySelector('ul')
+// const google = `<li>${reatLink({path: 'https://google.com', name: 'Google'})}</li>`
+// const ya = `<li>${creatLink({path: 'https://ya.ru', name: 'Ya'})}</li>`
+
+// ul.insertAdjacentElement('afterbegin',google )
+// ul.insertAdjacentElement('afterbegin',ya )
+const createLink = ({path, name}) => `<a target="_blank" href="${path}">${name}</a>`
+
+const ul = document.querySelector('ul')
+
+const google = `<li>${createLink({path: 'https://google.com', name: 'Google'})}</li>`
+
+const ya = `<li>${createLink({path: 'https://ya.ru', name: 'Ya'})}</li>`
+
+ul.insertAdjacentHTML('afterbegin', google)
+ul.insertAdjacentHTML('afterbegin', ya)
+
+const strToLog = `
+  Hello 
+  World
+    I am 
+      New tab
+`
+
+console.log(strToLog)
+
+const strLog = `
+    hello
+        world
+            I am 
+             a new tab
+`
+
+console.log(strLog);
