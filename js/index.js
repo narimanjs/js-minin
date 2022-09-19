@@ -128,7 +128,7 @@ form.addEventListener('submit', event => {
 //     console.log('Form data: ', formData);
 // }
 
-// 62 Строки
+// 61 Строки
 
 // const creatLink = ({path, name}) => `<a target="_blank" href="${path}">${name}</a>`
 
@@ -138,31 +138,101 @@ form.addEventListener('submit', event => {
 
 // ul.insertAdjacentElement('afterbegin',google )
 // ul.insertAdjacentElement('afterbegin',ya )
-const createLink = ({path, name}) => `<a target="_blank" href="${path}">${name}</a>`
+// const createLink = ({path, name}) => `<a target="_blank" href="${path}">${name}</a>`
 
-const ul = document.querySelector('ul')
+// const ul = document.querySelector('ul')
 
-const google = `<li>${createLink({path: 'https://google.com', name: 'Google'})}</li>`
+// const google = `<li>${createLink({path: 'https://google.com', name: 'Google'})}</li>`
 
-const ya = `<li>${createLink({path: 'https://ya.ru', name: 'Ya'})}</li>`
+// const ya = `<li>${createLink({path: 'https://ya.ru', name: 'Ya'})}</li>`
 
-ul.insertAdjacentHTML('afterbegin', google)
-ul.insertAdjacentHTML('afterbegin', ya)
+// ul.insertAdjacentHTML('afterbegin', google)
+// ul.insertAdjacentHTML('afterbegin', ya)
 
-const strToLog = `
-  Hello 
-  World
-    I am 
-      New tab
-`
+// const strToLog = `
+//   Hello 
+//   World
+//     I am 
+//       New tab
+// `
 
-console.log(strToLog)
+// console.log(strToLog)
 
-const strLog = `
-    hello
-        world
-            I am 
-             a new tab
-`
+// const strLog = `
+//     hello
+//         world
+//             I am 
+//              a new tab
+// `
 
-console.log(strLog);
+// console.log(strLog);
+
+// 62 Классы и наследование
+// RootElement <= Box <= instances
+
+// class RootElement {
+//   constructor(tagName = 'div') {
+//     this.el = document.createElement(tagName)
+//     this.el.style.marginBottom = '20px'
+//   }
+
+//   hide() {
+//     this.el.style.display = 'none'
+//   }
+//   show() {
+//     this.el.style.display = 'block'
+//   }
+//   append() {
+//     document.querySelector('.wrapper').insertAdjacentElement('afterbegin', this.el)
+//   }
+// }
+
+// class Box extends RootElement {
+//   constructor(color, size = 150, tagName) {
+//     super(tagName)
+//     this.color = color;
+//     this.size = size;
+    
+//   }
+//   create() {
+//     this.el.style.background = this.color
+//     this.el.style.width = this.el.style.height = `${this.size}px`
+
+//     this.append()
+//   }
+// }
+
+// class Circle extends RootElement {
+//   constructor(color) {
+//     super()
+
+//     this.color = color
+//   }
+//   create() {
+//     this.el.style.borderRadius = '50%'
+//     this.el.style.width = this.el.style.height = `120px`
+//     this.el.style.background = this.color
+//     this.append()
+//   }
+  
+// }
+// const redBox = new Box('red', 100, 'div').create();
+// const blueBox = new Box('blue').create();
+// const yellowBox = new Box('yellow').create();
+// const circle = new Circle('blue').create();
+
+// redBox.el.addEventListener('click', () => {
+//   redBox.hide()
+// })
+/* Реализуйте класс Dropdown, который будет инициализировать компонент выбора элементов по функционалу похожий на обычный HTML элемент select, но полностью реализованный вашим кодом без select тега.
+
+Пример использования:
+const dropdown = new Dropdown('dropdown', {
+  items: [
+    {label: 'Москва', id: 'msk'},
+    {label: 'Санкт-Петербург', id: 'spb'},
+    {label: 'Новосибирск', id: 'nsk'},
+    {label: 'Краснодар', id: 'krdr'}
+  ]
+})
+*/
