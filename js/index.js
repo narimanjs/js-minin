@@ -93,17 +93,17 @@
 
 // 60 rest spread
 
-const form = document.querySelector('form')
+// const form = document.querySelector('form')
 
-form.addEventListener('submit', event => {
-    event.preventDefault()
+// form.addEventListener('submit', event => {
+//     event.preventDefault()
 
-    const title = form.title.value
-    const text = form.text.value
-    const desc = form.desc.value
+//     const title = form.title.value
+//     const text = form.text.value
+//     const desc = form.desc.value
 
-    saveForm({title, text, desc})
-})
+//     saveForm({title, text, desc})
+// })
 
 // Spread
 // function saveForm(data) {
@@ -233,6 +233,20 @@ const dropdown = new Dropdown('dropdown', {
     {label: 'Санкт-Петербург', id: 'spb'},
     {label: 'Новосибирск', id: 'nsk'},
     {label: 'Краснодар', id: 'krdr'}
-  ]
-})
-*/
+  */
+
+    // setTimeout(() => {
+    //   alert('Hello, world!')
+    // }, 2000);
+
+     let counter = 0;
+
+    let interval = setInterval(() => {
+      console.log(++counter);
+    }, 1000 * 2)
+
+    setTimeout(() => {
+      clearInterval(interval)
+    }, 5000)
+
+    
