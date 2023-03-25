@@ -3,7 +3,7 @@ const isLoading: boolean = false;
 
 const int: number = 42;
 const flat: number = 4.2;
-const message: string = 'hello TS';
+const mmessage: string = 'hello TS';
 
 const numberArray: number[] = [1, 1, 2, 3, 5, 8, 13];
 const numberArray2: Array<number> = [1, 1, 2, 3, 5, 8, 13];
@@ -37,7 +37,7 @@ function throwERR(message: string): never {
 // }
 
 
-// Type Allias
+// ************ Type Allias
 
 type Login = string;
 
@@ -46,3 +46,8 @@ const login: Login = 'admin';
 type ID = string | number
 const id1: ID = 1234;
 const id2: ID = '1234';
+
+// ************ Null 
+
+type SomeType = string | null | undefined;
+
